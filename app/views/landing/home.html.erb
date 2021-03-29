@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+  <title>Movie Booking</title>
+</head>
+<body>
+<div id="landing-page-carousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= image_tag("/assets/landing_page/image1.jpg", size: "250x350", class: "carousel-image d-block w-100", alt: "First slide") %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag("/assets/landing_page/image2.jpg", size: "250x350", class: "carousel-image d-block w-100", alt: "First slide") %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag("/assets/landing_page/image3.jpg", size: "250x350", class: "carousel-image d-block w-100", alt: "First slide") %>
+    </div>
+  </div>
+</div>
+
+<div class="container movie-cards">
+  <div class="row">
+    <% @movies.each do |movie| %>
+      <div class="col-sm-3">
+        <div class="panel panel-primary">
+          <div class="panel-heading"><%= movie.name %></div>
+          <div class="panel-body">
+            <% if movie.poster.attached? %>
+              <%= image_tag(url_for(movie.poster), class: "img-responsive", width: "100%", alt: "Image") %>
+            <% else %>
+              <%= image_tag("/assets/placeholder.png", class: "img-responsive", width: "100%", alt: "Image") %>
+            <% end %>
+          </div>
+          <div class="panel-body">Certificate <%= movie.certificate %></div>
+          <div class="panel-body">Duration <%= movie.duration %></div>
+          <div class="panel-footer"><%= link_to "Book now", initiate_booking_url(id: movie.id) %></div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div><br>
+</body>
+</html>

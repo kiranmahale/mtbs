@@ -1,0 +1,13 @@
+<div class="card" style="width: 28rem;">
+  <% if @movie.poster.attached? %>
+    <%= image_tag url_for(@movie.poster), class: "card-img-top", height: "300px", width: "300px" %>
+  <% end %>
+  <div class="card-body">
+    <h3 class="card-title"><%= @movie.name %></h3>
+    <p class="card-text"><b>Description</b> <%= @movie.description %></p>
+    <p class="card-text"><b>Certificate</b> <%= @movie.certificate %></p>
+    <p class="card-text"><b>Duration</b> <%= @movie.duration %></p>
+    <p class="card-text"><b>Star cast</b> <%= @movie.star_cast %></p>
+    <p class="card-text"><b>Release date</b> <%= @movie.release_date %></p>
+  </div>
+</div>

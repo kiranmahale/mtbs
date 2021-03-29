@@ -1,0 +1,14 @@
+<div>
+  <center>
+    <h2> Edit Movie</h2>
+  </center>
+  <div class="container">
+    <%= form_for @movie, url: {action: :update} do |f| %>
+      <%= render "errors", form_object: @movie %>
+      <%= render "form", f: f %>
+      <div>
+        <%= f.submit 'Update Movie', class: "btn btn-default" %>
+      </div>
+    <% end %>
+  </div>
+</div>

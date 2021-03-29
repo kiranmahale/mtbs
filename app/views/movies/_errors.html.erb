@@ -1,0 +1,11 @@
+
+<% if form_object.errors.any? %>
+  <div id="error_explanation">
+    <h4><%= pluralize(form_object.errors.count, "error") %> prohibited this movie from being saved:</h4>
+    <ul>
+    <% form_object.errors.full_messages.each do |msg| %>
+      <li class="error-message"><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

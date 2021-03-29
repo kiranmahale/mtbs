@@ -1,0 +1,31 @@
+<% if @movie.poster.attached? %>
+  <%= image_tag url_for(@movie.poster), height: "300px", width: "300px" %>
+<% end %>
+<div class="form-group">
+  <%= f.label :poster %>
+  <%= f.file_field :poster %>
+</div>
+<div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+</div>
+<div class="form-group">
+  <%= f.label :description %>
+  <%= f.text_area :description, class: "form-control" %>
+</div>
+<div class="form-group">
+  <%= f.label :certificate %>
+  <%= f.select :certificate, MOVIE_CERTIFICATE, {}, { class: "form-control" } %>
+</div>
+<div class="form-group">
+  <%= f.label :duration %>
+  <%= f.number_field :duration, class: "form-control" %>
+</div>
+<div class="form-group">
+  <%= f.label :star_cast %>
+  <%= f.text_field :star_cast, class: "form-control" %>
+</div>
+<div class="form-group">
+  <%= f.label :release_date %>
+  <%= f.date_field :release_date, class: "form-control" %>
+</div>

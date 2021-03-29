@@ -1,0 +1,40 @@
+<div class="jumbotron ticket-receipt">
+  <div>
+    <% if @movie.poster.attached? %>
+      <%= image_tag url_for(@movie.poster), height: "300px", width: "300px" %>
+    <% end %>
+  </div>
+  <h2>Booking Details</h2>
+  <table class="table">
+    <tr>
+      <h4>
+        <td>Movie name</td>
+        <td><%= @movie.name %></td>
+      </h4>
+    </tr>
+    <tr>
+      <h4>
+        <td>Screen name</td>
+        <td><%= @screen_name %></td>
+      </h4>
+    </tr>
+    <tr>
+      <h4>
+        <td>Date</td>
+        <td><%= @date %></td>
+      </h4>
+    </tr>
+    <tr>
+      <h4>
+        <td>Time</td>
+        <td><%= @time %></td>
+      </h4>
+    </tr>
+    <tr>
+      <h4>
+        <td>Seat Numbers</td>
+        <td><%= @seat_numbers %></td>
+      </h4>
+    </tr>
+  </table>
+</div>

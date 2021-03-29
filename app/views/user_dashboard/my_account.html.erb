@@ -1,0 +1,21 @@
+<h1>My Account</h1>
+<table class="table">
+  <tr>
+    <th> Movie </th>
+    <th> Date </th>
+    <th> Time </th>
+    <th> Seat numbers </th>
+    <th> Total amount </th>
+  </tr>
+  <% @bookings.includes(:screening_detail).each do |booking| %>
+    <tr>
+      <td> <%= booking.screening_detail.movie.name %> </td>
+      <td> <%= booking.screening_detail.screening_date %> </td>
+      <td> <%= booking.screening_detail.time_slot.start_end_time %> </td>
+      <td> <%= booking.seat_number.join(', ') %> </td>
+      <td> <%= booking.booking_amount %> </td>
+      <td> <%= link_to "Details", booking_path(booking.id) %> </td>
+      <td> <%= link_to "Cancel booking", booking_path(booking.id), method: :delete %> </td>
+    </tr>
+  <% end %>
+</table>

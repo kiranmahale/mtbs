@@ -1,0 +1,12 @@
+<div>
+  <center> <h2> Add New Movie</h2> </center>
+  <div class="container">
+    <%= form_for @movie, url: {action: :create} do |f| %>
+      <%= render "errors", form_object: @movie %>
+      <%= render "form", f: f %>
+      <div>
+        <%= f.submit 'Add Movie', class: "btn btn-default" %>
+      </div>
+    <% end %>
+  </div>
+</div>
