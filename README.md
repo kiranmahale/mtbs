@@ -16,3 +16,11 @@ Things you may want to cover:
 * How to run the test suite: rspec
 
 * ...
+
+
+STEPS
+bundle install
+rake db:create
+rails db:migrate
+rails db:seed
+rspec spec
